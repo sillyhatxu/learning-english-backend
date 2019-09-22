@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  user-backend:
+    image: xushikuan/user-backend:${APPLICATION_VERSION}
+    env_file:
+      - ./sillyhat-env-config/config.env
+    ports:
+      - 8801:8080
+    deploy:
+      replicas: 1
+      restart_policy:
+        max_attempts: 1
